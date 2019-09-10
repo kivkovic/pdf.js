@@ -115,75 +115,75 @@ const hasDOM = typeof window === 'object' && typeof document === 'object';
 
 // Provides support for String.prototype.startsWith in legacy browsers.
 // Support: IE, Chrome<41
-(function checkStringStartsWith() {
+/* (function checkStringStartsWith() {
   if (String.prototype.startsWith) {
     return;
   }
   require('core-js/fn/string/starts-with');
-})();
+})(); */
 
 // Provides support for String.prototype.endsWith in legacy browsers.
 // Support: IE, Chrome<41
-(function checkStringEndsWith() {
+/*(function checkStringEndsWith() {
   if (String.prototype.endsWith) {
     return;
   }
   require('core-js/fn/string/ends-with');
-})();
+})(); */
 
 // Provides support for String.prototype.includes in legacy browsers.
 // Support: IE, Chrome<41
-(function checkStringIncludes() {
+/* (function checkStringIncludes() {
   if (String.prototype.includes) {
     return;
   }
   require('core-js/fn/string/includes');
-})();
+})(); */
 
 // Provides support for Array.prototype.includes in legacy browsers.
 // Support: IE, Chrome<47
-(function checkArrayIncludes() {
+/* (function checkArrayIncludes() {
   if (Array.prototype.includes) {
     return;
   }
   require('core-js/fn/array/includes');
-})();
+})(); */
 
 // Provides support for Array.from in legacy browsers.
 // Support: IE
-(function checkArrayFrom() {
+/* (function checkArrayFrom() {
   if (Array.from) {
     return;
   }
   require('core-js/fn/array/from');
-})();
+})(); */
 
 // Provides support for Object.assign in legacy browsers.
 // Support: IE
-(function checkObjectAssign() {
+/* (function checkObjectAssign() {
   if (Object.assign) {
     return;
   }
   require('core-js/fn/object/assign');
-})();
+})(); */
 
 // Provides support for Math.log2 in legacy browsers.
 // Support: IE, Chrome<38
-(function checkMathLog2() {
+/* (function checkMathLog2() {
   if (Math.log2) {
     return;
   }
   Math.log2 = require('core-js/fn/math/log2');
-})();
+})(); */
 
 // Provides support for Number.isNaN in legacy browsers.
 // Support: IE.
-(function checkNumberIsNaN() {
+/* (function checkNumberIsNaN() {
   if (Number.isNaN) {
     return;
   }
   Number.isNaN = require('core-js/fn/number/is-nan');
-})();
+})(); */
 
 // Provides support for Number.isInteger in legacy browsers.
 // Support: IE, Chrome<34
