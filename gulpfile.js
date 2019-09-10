@@ -81,8 +81,8 @@ var AUTOPREFIXER_CONFIG = {
     'Firefox ESR',
     'IE >= 11',
     'Safari >= 9',
-    '> 0.5%',
-    'not dead',
+    //'> 0.5%',
+    //'not dead',
   ],
 };
 
@@ -90,11 +90,11 @@ var DEFINES = {
   PRODUCTION: true,
   TESTING: false,
   // The main build targets:
-  GENERIC: false,
+  GENERIC: true,
   FIREFOX: false,
   MOZCENTRAL: false,
   CHROME: false,
-  MINIFIED: false,
+  MINIFIED: true,
   COMPONENTS: false,
   LIB: false,
   SKIP_BABEL: false,
@@ -1344,7 +1344,7 @@ gulp.task('dist-pre', gulp.series('generic', 'components', 'image_decoders',
       'http': false,
       'https': false,
       //'node-ensure': false,
-      'zlib': false,
+      //'zlib': false,
     },
     format: 'amd', // to not allow system.js to choose 'cjs'
     repository: {
