@@ -747,6 +747,15 @@ class WidgetAnnotation extends Annotation {
     const data = this.data;
 
     data.annotationType = AnnotationType.WIDGET;
+
+    var additionalActions = getInheritableProperty({ dict: dict, key: 'AA' });
+    if (additionalActions) {
+      data.additionalActions = {};
+      for (let key of additionalActions.getKeys()) {
+        data.additionalActions[key] = additionalActions.getArray(key)._map;
+      }
+    }
+
     data.fieldName = this._constructFieldName(dict);
     data.fieldValue = getInheritableProperty({ dict, key: 'V',
                                                getArray: true, });
