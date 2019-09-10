@@ -23,10 +23,10 @@ if ((typeof PDFJSDev === 'undefined' ||
 
 globalScope._pdfjsCompatibilityChecked = true;
 
-const isNodeJS = require('./is_node');
+//const isNodeJS = require('./is_node');
 
 const hasDOM = typeof window === 'object' && typeof document === 'object';
-
+/*
 // Support: Node.js
 (function checkNodeBtoa() {
   if (globalScope.btoa || !isNodeJS()) {
@@ -47,7 +47,7 @@ const hasDOM = typeof window === 'object' && typeof document === 'object';
     // eslint-disable-next-line no-undef
     return Buffer.from(input, 'base64').toString('binary');
   };
-})();
+})(); */
 
 // Provides support for ChildNode.remove in legacy browsers.
 // Support: IE.
@@ -70,7 +70,7 @@ const hasDOM = typeof window === 'object' && typeof document === 'object';
 // one parameter, in legacy browsers.
 // Support: IE
 (function checkDOMTokenListAddRemove() {
-  if (!hasDOM || isNodeJS()) {
+  if (!hasDOM/* || isNodeJS()*/) {
     return;
   }
   const div = document.createElement('div');
@@ -99,7 +99,7 @@ const hasDOM = typeof window === 'object' && typeof document === 'object';
 // "force" parameter, in legacy browsers.
 // Support: IE
 (function checkDOMTokenListToggle() {
-  if (!hasDOM || isNodeJS()) {
+  if (!hasDOM/* || isNodeJS()*/) {
     return;
   }
   const div = document.createElement('div');
