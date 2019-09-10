@@ -50,10 +50,10 @@ if (typeof PDFJSDev !== 'undefined' && PDFJSDev.test('GENERIC')) {
   if (typeof window === 'undefined') {
     // node.js - disable worker and set require.ensure.
     isWorkerDisabled = true;
-    if (typeof __non_webpack_require__.ensure === 'undefined') {
+    /* if (typeof __non_webpack_require__.ensure === 'undefined') {
       __non_webpack_require__.ensure = __non_webpack_require__('node-ensure');
     }
-    useRequireEnsure = true;
+    useRequireEnsure = true; */
   } else if (typeof __non_webpack_require__ !== 'undefined' &&
              typeof __non_webpack_require__.ensure === 'function') {
     useRequireEnsure = true;

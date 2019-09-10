@@ -1333,7 +1333,7 @@ gulp.task('dist-pre', gulp.series('generic', 'components', 'image_decoders',
     bugs: DIST_BUGS_URL,
     license: DIST_LICENSE,
     dependencies: {
-      'node-ensure': '^0.0.0', // shim for node for require.ensure
+      //'node-ensure': '^0.0.0', // shim for node for require.ensure
       'worker-loader': '^2.0.0', // used in external/dist/webpack.json
     },
     peerDependencies: {
@@ -1343,7 +1343,7 @@ gulp.task('dist-pre', gulp.series('generic', 'components', 'image_decoders',
       'fs': false,
       'http': false,
       'https': false,
-      'node-ensure': false,
+      //'node-ensure': false,
       'zlib': false,
     },
     format: 'amd', // to not allow system.js to choose 'cjs'
