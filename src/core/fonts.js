@@ -469,7 +469,7 @@ var Font = (function FontClosure() {
     this.missingFile = false;
 
     this.glyphCache = Object.create(null);
-
+    this.baseEncodingName = properties.baseEncodingName;
     this.isSerifFont = !!(properties.flags & FontFlags.Serif);
     this.isSymbolicFont = !!(properties.flags & FontFlags.Symbolic);
     this.isMonospace = !!(properties.flags & FontFlags.FixedPitch);
@@ -2859,6 +2859,25 @@ var Font = (function FontClosure() {
         widthCode = this.cMap.lookup(charcode);
       }
       width = this.widths[widthCode];
+
+      if (this.baseEncodingName == 'WinAnsiEncoding'
+        && this.differences
+        && this.differences[charcode]
+        && this.differences[charcode][0] === 'u') {
+        switch (this.differences[charcode]) {
+          case 'uni0107': width = this.widths[99]; break; // ć 63h 99
+          case 'uni0106': width = this.widths[67]; break; // Ć 43h 67
+          case 'uni010D': width = this.widths[99]; break; // č 63h 99
+          case 'uni010C': width = this.widths[67]; break; // Č 43h 67
+          case 'uni0161': width = this.widths[115]; break; // š 73h 115
+          case 'uni0160': width = this.widths[83]; break; // Š 53h 83
+          case 'uni0111': width = this.widths[100]; break; // đ 64h 100
+          case 'uni0110': width = this.widths[68]; break; // Đ 44h 68
+          case 'uni017E': width = this.widths[122]; break; // ž 7ah 122
+          case 'uni017D': width = this.widths[90]; break; // Ž 5ah 90
+        }
+      }
+
       width = isNum(width) ? width : this.defaultWidth;
       var vmetric = this.vmetrics && this.vmetrics[widthCode];
 
