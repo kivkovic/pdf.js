@@ -40,9 +40,9 @@ import { WebGLContext } from './webgl';
 const DEFAULT_RANGE_CHUNK_SIZE = 65536; // 2^16 = 65536
 
 let isWorkerDisabled = false;
-let fallbackWorkerSrc;
-
+let fallbackWorkerSrc = './pdf.worker.js';
 let fakeWorkerFilesLoader = null;
+/*
 if (typeof PDFJSDev !== 'undefined' && PDFJSDev.test('GENERIC')) {
   let useRequireEnsure = false;
   // For GENERIC build we need to add support for different fake file loaders
@@ -50,10 +50,6 @@ if (typeof PDFJSDev !== 'undefined' && PDFJSDev.test('GENERIC')) {
   if (typeof window === 'undefined') {
     // node.js - disable worker and set require.ensure.
     isWorkerDisabled = true;
-    /* if (typeof __non_webpack_require__.ensure === 'undefined') {
-      __non_webpack_require__.ensure = __non_webpack_require__('node-ensure');
-    }
-    useRequireEnsure = true; */
   } else if (typeof __non_webpack_require__ !== 'undefined' &&
              typeof __non_webpack_require__.ensure === 'function') {
     useRequireEnsure = true;
@@ -100,7 +96,7 @@ if (typeof PDFJSDev !== 'undefined' && PDFJSDev.test('GENERIC')) {
     }
   }
 }
-
+*/
 /**
  * @typedef {function} IPDFStreamFactory
  * @param {DocumentInitParameters} params The document initialization
