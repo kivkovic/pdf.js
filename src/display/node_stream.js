@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 /* globals __non_webpack_require__ */
-
+/*
 let fs = __non_webpack_require__('fs');
 let http = __non_webpack_require__('http');
 let https = __non_webpack_require__('https');
@@ -445,3 +445,4 @@ class PDFNodeStreamFsRangeReader extends BaseRangeReader {
 export {
   PDFNodeStream,
 };
+*/
